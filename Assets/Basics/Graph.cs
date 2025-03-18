@@ -6,6 +6,7 @@ public class Graph : MonoBehaviour
 {
     [SerializeField] private Transform pointPrefab;
     [SerializeField][Range(10, 100)] private int resolution = 10;
+    [SerializeField] [Range(0,1)] private int function = 0;
 
     private Transform[] points;
 
@@ -19,7 +20,7 @@ public class Graph : MonoBehaviour
         {
             Transform point = Instantiate(pointPrefab);
             position.x = (i + 0.5f) * step - 1f;
-            position.y = FunctionLibrary.MultiWave(position.x, 0f);
+            position.y = (function == 0) ? FunctionLibrary.Wave(position.x, 0f) : FunctionLibrary.MultiWave(position.x, 0f);
             point.localPosition = position;
             point.localScale = scale;
             point.SetParent(transform, false);
@@ -33,7 +34,7 @@ public class Graph : MonoBehaviour
         for (int i = 0; i < points.Length; i++)
         {
             Vector3 position = points[i].localPosition;
-            position.y = FunctionLibrary.MultiWave(position.x, time);
+            position.y = (function == 0) ? FunctionLibrary.Wave(position.x, 0f) : FunctionLibrary.MultiWave(position.x, 0f);
             points[i].localPosition = position;
         }
     }
