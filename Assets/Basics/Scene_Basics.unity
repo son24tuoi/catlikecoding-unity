@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointPrefab: {fileID: 4600086090730044139, guid: 8ba83b465dbf8824d9b1a56ca3b50057, type: 3}
-  resolution: 30
+  resolution: 50
+  function: 4
 --- !u!4 &605617941
 Transform:
   m_ObjectHideFlags: 0
@@ -373,7 +374,7 @@ Transform:
   m_GameObject: {fileID: 1403916231}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
